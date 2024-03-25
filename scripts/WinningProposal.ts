@@ -36,13 +36,10 @@ async function main() {
     const result = await publicClient.readContract({
         address: contractAddress,
         abi,
-        functionName: "winningProposal",
+        functionName: "winnerName",
         args: [],
-      });
-      console.log("Transaction hash:", result);
-      console.log("Waiting for confirmations...");
-      //const receipt = await publicClient.waitForTransactionReceipt({ hash });
-      console.log("Transaction confirmed");
+      }) as `0x${string}`;
+      console.log("The winner is:", hexToString(result, {size: 32}));
     process.exit();
 
 }
