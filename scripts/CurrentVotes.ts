@@ -29,7 +29,7 @@ async function main() {
         functionName: "proposals",
         args: [proposal],
       }) as any[];
-      console.log(`Proposal ${proposal} has ${result[1]} votes so far.`);
+      console.log(`Proposal ${proposal} ${hexToString(result[0], { size: 32 })} has ${result[1]} votes so far.`);
     process.exit();
 }
 
